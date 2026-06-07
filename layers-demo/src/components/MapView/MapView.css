@@ -1,0 +1,99 @@
+.map-root {
+  position: relative;
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+}
+
+.map-container {
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Loading overlay ──────────────────────────────────────── */
+.map-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 23, 42, 0.82);
+  gap: 14px;
+  color: #94a3b8;
+  font-size: 13px;
+  z-index: 50;
+}
+.map-loading__spinner {
+  width: 32px; height: 32px;
+  border: 3px solid #1e3a5f;
+  border-top-color: #3b82f6;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Legend ───────────────────────────────────────────────── */
+.map-legend {
+  position: absolute;
+  bottom: 36px;
+  left: 12px;
+  background: rgba(15,23,42,0.88);
+  border: 1px solid #1e3a5f;
+  border-radius: 8px;
+  padding: 10px 12px;
+  z-index: 10;
+  min-width: 130px;
+}
+.map-legend__title {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #64748b;
+  margin: 0 0 8px;
+}
+.map-legend__row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: #94a3b8;
+  margin-bottom: 4px;
+}
+.map-legend__swatch {
+  width: 12px; height: 12px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* ── Popup ────────────────────────────────────────────────── */
+.map-popup .mapboxgl-popup-content {
+  background: #0f172a;
+  border: 1px solid #1e3a5f;
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: #94a3b8;
+  font-size: 12px;
+  min-width: 200px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+.map-popup .mapboxgl-popup-tip { border-top-color: #1e3a5f !important; }
+.map-popup .mapboxgl-popup-close-button { color: #64748b; font-size: 16px; }
+
+.popup-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #e2e8f0;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #1e3a5f;
+  padding-bottom: 6px;
+}
+.popup-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+.popup-row span { color: #64748b; }
+.popup-row strong { color: #cbd5e1; }
